@@ -196,8 +196,9 @@ function Projects() {
                 </ul>
               </>
             );
-            const cardClass =
-              "flex flex-col rounded-md border border-line bg-surface p-6 transition-colors";
+            const cardClass = `flex flex-col rounded-md border border-line bg-surface p-6 transition-colors${
+              project.featured ? " sm:col-span-2" : ""
+            }`;
             return project.href ? (
               <a
                 key={project.name}

@@ -10,56 +10,66 @@
 export const LINKS = {
   github: "https://github.com/yossime",
   email: "yossimendelovitz@gmail.com",
-  linkedin: "",
+  linkedin: "https://www.linkedin.com/in/yossi-mendelovitz",
 };
 
 /**
  * Public URL of the deployed site (used for OpenGraph/canonical metadata).
  * Update after deploying to Vercel.
  */
-export const SITE_URL = "https://home-page.vercel.app";
+export const SITE_URL = "https://home-page-one-blue.vercel.app";
 
 export type Project = {
   name: string;
   description: string;
   tags: string[];
   /**
-   * Repo link. Some repos are still private, so cards default to the GitHub
-   * profile — point each at the real repo as it goes public. Use null for
-   * work that cannot be shared.
+   * Repo or product link. Use null for work that cannot be shared.
    */
   href: string | null;
+  /** Short status line shown under the title (e.g. "Live product"). */
   note?: string;
+  /** Spans the full grid width — for the headline project. */
+  featured?: boolean;
 };
 
 export const PROJECTS: Project[] = [
+  {
+    name: "Keranto",
+    description:
+      "Hebrew AI phone secretary for Israeli small businesses — answers missed calls, holds a real Hebrew conversation, captures the lead and pushes it to the owner on WhatsApp. Live product.",
+    tags: ["Python", "Twilio Media Streams", "Hebrew STT/TTS", "LLM agents", "Postgres"],
+    href: "https://keranto.com",
+    note: "Live product · code private",
+    featured: true,
+  },
   {
     name: "StoryConnect",
     description:
       "Hebrew-first ephemeral stories app, RTL-aware from the first screen — mobile client on Expo with row-level-secured Postgres behind it.",
     tags: ["Expo", "React Native", "Supabase", "Postgres + RLS"],
-    href: LINKS.github,
+    href: "https://github.com/yossime/StoryConnect",
   },
   {
     name: "Togedo",
     description:
       "Collaborative group task management — one TypeScript type system from database to UI, with realtime sync across every member's board.",
     tags: ["Next.js", "NestJS", "tRPC", "Prisma", "Socket.IO"],
-    href: LINKS.github,
+    href: "https://github.com/yossime/Togedo",
   },
   {
     name: "Community Platform",
     description:
       "RTL-first community and marketplace platform: payments for sellers, typo-tolerant Hebrew search, and vector-backed discovery.",
     tags: ["Next.js", "tRPC", "Prisma + pgvector", "Stripe Connect", "Meilisearch"],
-    href: LINKS.github,
+    href: "https://github.com/yossime/community-platform",
   },
   {
     name: "AI Phone Agent",
     description:
       "Hebrew voice-AI experiments on Twilio ConversationRelay — wiring Hebrew speech-to-text and text-to-speech into a live phone call.",
     tags: ["Twilio ConversationRelay", "Hebrew STT/TTS", "WebRTC"],
-    href: LINKS.github,
+    href: "https://github.com/yossime/ai-phone",
   },
   {
     name: "Industrial IoT — Modbus transport",
@@ -114,6 +124,6 @@ export const SPECIALTIES: { title: string; detail: string }[] = [
   {
     title: "AI-assisted development",
     detail:
-      "Agents and code generation as everyday tools, with the engineering judgment to review what ships.",
+      "One person shipping end to end — product thinking, frontend, backend, data, and infra — by directing AI coding agents through the work. The engineering judgment to review, test, and own everything that ships stays with me.",
   },
 ];

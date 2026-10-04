@@ -26,10 +26,10 @@ npm run build    # production build
 
 All copy that changes over time lives in [`lib/content.ts`](lib/content.ts):
 
-- `LINKS.linkedin` — paste a LinkedIn URL to show the link (hidden while empty)
-- `PROJECTS[n].href` — project cards default to the GitHub profile while some
-  repos are private; point each at its real repo as it goes public
-- `SITE_URL` — set to the production URL after deploying (used for OpenGraph)
+- `LINKS.linkedin` — LinkedIn URL (the link is hidden while the string is empty)
+- `PROJECTS[n].href` — repo or product link per card (`null` for work that
+  cannot be shared); `note` adds a status line, `featured` spans the full width
+- `SITE_URL` — the production URL (used for OpenGraph/canonical metadata)
 
 ## Deploy on Vercel
 
