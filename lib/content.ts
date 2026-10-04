@@ -17,7 +17,7 @@ export const LINKS = {
  * Public URL of the deployed site (used for OpenGraph/canonical metadata).
  * Update after deploying to Vercel.
  */
-export const SITE_URL = "https://home-page-one-blue.vercel.app";
+export const SITE_URL = "https://yossi-mendelovitz.vercel.app";
 
 export type Project = {
   name: string;
